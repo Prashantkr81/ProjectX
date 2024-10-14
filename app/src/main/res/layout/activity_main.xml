@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/music_thumbnail"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/thumbnail"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.443" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="343dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+
+        android:mirrorForRtl="true"
+        app:layout_constraintBottom_toTopOf="@+id/controls"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/songtitle" />
+
+    <TextView
+        android:id="@+id/current_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="12dp"
+        android:text="00:00"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/controls"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintStart_toEndOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        />
+
+    <TextView
+        android:id="@+id/total_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:text="00:00"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/controls"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.488" />
+
+    <TextView
+        android:id="@+id/songtitle"
+        android:layout_width="323dp"
+        android:layout_height="wrap_content"
+        android:text="Song Name"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/progressBar"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/music_thumbnail" />
+
+    <LinearLayout
+        android:id="@+id/controls"
+        android:layout_width="414dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:background="@null"
+
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar">
+
+
+
+        <ImageButton
+            android:id="@+id/prev_Button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@null"
+
+            app:srcCompat="@drawable/previous_back_direction_svgrepo_com" />
+
+
+        <ImageButton
+            android:id="@+id/play_button"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:text="Play"
+            android:background="@null"
+            app:srcCompat="@drawable/play_button_svgrepo_com" />
+
+        <ImageButton
+            android:id="@+id/next_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@null"
+            app:srcCompat="@drawable/next_svgrepo_com" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <ImageButton
+            android:id="@+id/onlinePlaylist"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/cloud_music_1_svgrepo_com" />
+
+        <ImageButton
+            android:id="@+id/player"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/music_player_headphones_svgrepo_com" />
+
+        <ImageButton
+            android:id="@+id/offlinePlaylist"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:text="Go to Offline page"
+            app:srcCompat="@drawable/music_library_multimedia_svgrepo_com" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:fontFamily="@font/short_baby"
+        android:text="ClassicTunes"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/music_thumbnail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

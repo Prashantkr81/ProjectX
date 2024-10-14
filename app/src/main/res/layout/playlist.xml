@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/header2"
+        android:layout_width="412dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="Library"
+        android:textSize="45dp"
+        android:fontFamily="@font/short_baby"
+        app:layout_constraintBottom_toTopOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playlistarea">
+
+        <ImageButton
+            android:id="@+id/onlinePlaylist"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            app:srcCompat="@drawable/cloud_music_1_svgrepo_com" />
+
+        <ImageButton
+            android:id="@+id/player"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:scaleType="centerCrop"
+            android:background="@null"
+            app:srcCompat="@drawable/music_player_headphones_svgrepo_com" />
+
+        <ImageButton
+            android:id="@+id/offlinePlaylist"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:text="Go to Offline page"
+            android:background="@null"
+            app:srcCompat="@drawable/music_library_multimedia_svgrepo_com" />
+
+    </LinearLayout>
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="406dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintBottom_toTopOf="@id/playlistarea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/header2" />
+
+    <RelativeLayout
+        android:id="@+id/playlistarea"
+        android:layout_width="405dp"
+        android:layout_height="600dp"
+
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView">
+
+        <LinearLayout
+            android:id="@+id/listElement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/music_library_svgrepo_com" />
+
+            <TextView
+                android:id="@+id/audio_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/audio_path"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
