@@ -16,7 +16,7 @@ public class offlinePlaylist extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.playlist);
 
-        ListView listView = findViewById(R.id.listElement);
+//        ListView listView = findViewById(R.id.listElement);
 
 
         ImageButton player = findViewById(R.id.player);
