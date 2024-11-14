@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:xmls="http://schemas.android.com/tools"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -86,7 +86,7 @@
 
         <LinearLayout
             android:id="@+id/listElement"
-            android:layout_width="match_parent"
+            android:layout_width="405dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:orientation="vertical"
@@ -95,7 +95,7 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/music_library_svgrepo_com" />
+                android:src="@drawable/music_library_svgrepo_com"/>
 
             <TextView
                 android:id="@+id/audio_title"

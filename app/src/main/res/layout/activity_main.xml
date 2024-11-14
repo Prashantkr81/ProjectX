@@ -11,6 +11,7 @@
 
     tools:context=".MainActivity">
 
+
     <ImageView
         android:id="@+id/music_thumbnail"
         android:layout_width="300dp"
@@ -19,18 +20,19 @@
         android:src="@drawable/thumbnail"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-         />
+        app:layout_constraintVertical_bias="0.492" />
 
-    <ProgressBar
+    <SeekBar
         android:id="@+id/seekBar"
-        style="?android:attr/progressBarStyleHorizontal"
+        android:thumb="@color/black"
+        android:outlineSpotShadowColor="@color/black"
         android:layout_width="343dp"
         android:layout_height="20dp"
         android:layout_marginTop="20dp"
 
-        android:mirrorForRtl="true"
         app:layout_constraintBottom_toTopOf="@+id/controls"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,9 +48,10 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/controls"
         app:layout_constraintEnd_toEndOf="@+id/seekBar"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toEndOf="@+id/seekBar"
         app:layout_constraintTop_toBottomOf="@+id/seekBar"
-        />
+        app:layout_constraintVertical_bias="0" />
 
     <TextView
         android:id="@+id/current_time"
@@ -63,16 +66,19 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/seekBar"
         app:layout_constraintTop_toBottomOf="@+id/seekBar"
-        app:layout_constraintVertical_bias="0.488" />
+        app:layout_constraintVertical_bias="0" />
 
     <TextView
         android:id="@+id/songtitle"
         android:layout_width="323dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+
         android:text="Song Name"
         android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/seekBar"
-        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/music_thumbnail" />
@@ -125,12 +131,12 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
         android:gravity="center"
 
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        >
+        tools:layout_editor_absoluteX="2dp">
 
         <ImageButton
             android:id="@+id/onlinePlaylist"
@@ -176,5 +182,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
          />
+
+    <SeekBar
+        android:id="@+id/seekVol"
+        android:layout_width="106dp"
+        android:layout_height="27dp"
+        android:thumb="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.229"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.919" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="26dp"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seekVol"
+        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_time"
+        app:layout_constraintVertical_bias="0.546"
+        app:srcCompat="@drawable/volume_svgrepo_com" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
