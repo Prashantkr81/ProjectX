@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     //set title for audio
     public void setTitle(int index){
-        mediaPlayer.reset();
+//        mediaPlayer.reset();
         TextView songtitle = findViewById(R.id.songtitle);
         songtitle.setText((titles[index]));
     }
@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         int minutes = (milliseconds / (1000 * 60)) % 60;
         return String.format("%02d:%02d", minutes, seconds);
     }
-
 
 
     @Override
@@ -150,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         mediaPlayer = MediaPlayer.create(this, audioFiles[currentIndex]);
+
         
         //play button controls
         playPauseButton.setOnClickListener(view -> {
@@ -159,6 +159,8 @@ public class MainActivity extends AppCompatActivity {
             }
             else {
                 mediaPlayer.start();
+
+                setTitle(currentIndex);
                 TextView total_time = findViewById(R.id.total_time);
                 total_time.setText(formatTime(mediaPlayer.getDuration()));
                 replaceButton(R.drawable.pause_circle_svgrepo_com);
@@ -168,8 +170,6 @@ public class MainActivity extends AppCompatActivity {
 
         nextButton.setOnClickListener(v -> playNext());
         prevButton.setOnClickListener(v -> playPrevious());
-
-
 
         SeekBar seekProgress = findViewById(R.id.seekBar);
         seekProgress.setMax(mediaPlayer.getDuration());
